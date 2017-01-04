@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+
+<link rel="stylesheet" href="{{art.css}}">
+<view class="container">
+    <view class="art-header">
+        <image src="{{art.image}}" class="art-img">
+            <view class="art-title"> {{art.title}}</view>
+            <view class="art-source"> {{art.image_source}}</view>
+        </image>
+    </view>
+
+    <view class="art-content">
+        <div class="main-wrap content-wrap">
+         <div class="headline">
+          <div class="img-place-holder">
+          </div>
+          </div>
+          </div>
+        <!--{{art.body}}   -->
+    </view>
+</view>
+

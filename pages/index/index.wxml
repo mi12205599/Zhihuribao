@@ -1,0 +1,37 @@
+
+<view class="container">
+<swiper indicator-dots="{{indicatorDots}}" 
+  autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banner}}" wx:for-item="it" wx:for-index="idx" >     
+    <swiper-item class="banner">
+        <image src="{{it.image}}" data-id="{{it.id}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%" />
+        <text class="{{banner-title}}"> {{it.title}}</text>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="news-item-container">
+  <block wx:for="{{list}}" wx:for-index="id">
+    <text wx:if="{{item.header}}" class="sub-item"> {{item.header}} </text>
+    <navigator  wx:else  url="../detail/detail?id={{item.id}}">
+      <view  class="news-item">
+        <view class="news-item-left">
+          <text class="news-item-title"> {{item.title}}</text>
+        </view>
+        <view class="news-item-right">
+          <image src="{{item.images[0]}}"  class="news-image"  />
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <button type="primary" class="load-btn" size="mini" loading="{{loading}}" plain="{{plain}}" bindtap="loadMore"> 更多 </button>
+  
+</view>
+
+<view>
+
+
+<!--在组件上使用 wx:for 控制属性绑定一个数组，即可使用数组中各项的数据渲染该组件
+默认数组的当前项的下标变量名为index，可以使用 wx:for-index 更改
+默认数组当前项数据节点是item,可以使用 wx:for-item 更改-->
